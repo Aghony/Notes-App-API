@@ -37,6 +37,7 @@ class NotesHandler {
     };
   }
 
+  // eslint-disable-next-line no-unused-vars
   getNoteByIdHandler(request, h) {
     const { id } = request.params;
     const note = this._service.getNoteById(id);
@@ -48,6 +49,7 @@ class NotesHandler {
     };
   }
 
+  // eslint-disable-next-line no-unused-vars
   putNoteByIdHandler(request, h) {
     this._validator.validateNotePayload(request.payload);
     const { id } = request.params;
@@ -60,6 +62,7 @@ class NotesHandler {
     };
   }
 
+  // eslint-disable-next-line no-unused-vars
   deleteNoteByIdHandler(request, h) {
     const { id } = request.params;
     this._service.deleteNoteById(id);
