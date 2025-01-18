@@ -2,7 +2,7 @@ const Hapi = require('@hapi/hapi');
 const notes = require('./api/notes');
 const NotesService = require('./services/inMemory/NotesService');
 const NotesValidator = require('./validator/notes');
-const ClientError = require('./exceptions/clienterror');
+const ClientError = require('./exceptions/ClientError');
 
 const init = async () => {
   const notesService = new NotesService();
