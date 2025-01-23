@@ -1,6 +1,6 @@
 import globals from 'globals';
 import pluginJs from '@eslint/js';
-import daStyle from 'eslint-config-dicodingacademy';
+import daStyle, { rules } from 'eslint-config-dicodingacademy';
 
 export default [
   daStyle,
@@ -8,3 +8,9 @@ export default [
   { languageOptions: { globals: { ...globals.browser, ...globals.node } } },
   pluginJs.configs.recommended,
 ];
+
+module.export = {
+  rules: {
+    camelcase: "off",
+  },
+};
