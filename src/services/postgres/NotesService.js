@@ -53,19 +53,11 @@ class NotesService {
       text: 'UPDATE notes SET title = $1, body = $2, tags = $3, updated_at = $4 WHERE id = $5 RETURNING id',
       values: [title, body, tags, updatedAt, id],
     };
-    try {
-      console.log('Running query:', query);
-      const result = await this._pool.query(query);
 
-      console.log('Query result:', result.rows);
-      if (!result.rows.length) {
-        throw new NotFoundError(
-          'Gagal memperbarui catatan. Id tidak ditemukan'
-        );
-      }
-    } catch (error) {
-      console.error('Error in editNoteById:', error);
-      throw error;
+    const result = await this._pool.query(query);
+
+    if (!result.rows.length) {
+      throw new NotFoundError('Gagal memperbarui catatan. Id tidak ditemukan');
     }
   }
 

@@ -14,7 +14,7 @@ class NotesHandler {
     this._validator.validateNotePayload(request.payload);
     const { title = 'untitled', body, tags } = request.payload;
 
-    const noteId =await this._service.addNote({ title, body, tags });
+    const noteId = await this._service.addNote({ title, body, tags });
 
     const response = h.response({
       status: 'success',
@@ -37,7 +37,7 @@ class NotesHandler {
     };
   }
 
-
+  // eslint-disable-next-line no-unused-vars
   async getNoteByIdHandler(request, h) {
     const { id } = request.params;
     const note = await this._service.getNoteById(id);
@@ -49,7 +49,7 @@ class NotesHandler {
     };
   }
 
-
+  // eslint-disable-next-line no-unused-vars
   async putNoteByIdHandler(request, h) {
     this._validator.validateNotePayload(request.payload);
     const { id } = request.params;
@@ -62,7 +62,7 @@ class NotesHandler {
     };
   }
 
-
+  // eslint-disable-next-line no-unused-vars
   async deleteNoteByIdHandler(request, h) {
     const { id } = request.params;
     await this._service.deleteNoteById(id);

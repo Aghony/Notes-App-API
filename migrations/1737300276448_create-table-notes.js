@@ -1,3 +1,7 @@
+/* eslint-disable camelcase */
+
+exports.shorthands = undefined;
+
 exports.up = (pgm) => {
   pgm.createTable('notes', {
     id: {
@@ -16,11 +20,11 @@ exports.up = (pgm) => {
       type: 'TEXT[]',
       notNull: true,
     },
-    createdAt: {
+    created_at: {
       type: 'TEXT',
       notNull: true,
     },
-    updatedAt: {
+    updated_at: {
       type: 'TEXT',
       notNull: true,
     },
@@ -28,5 +32,5 @@ exports.up = (pgm) => {
 };
 
 exports.down = (pgm) => {
-  pgm.droptable('notes');
+  pgm.dropTable('notes');
 };
